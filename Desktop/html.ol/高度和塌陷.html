@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,inital-scale=1.0">
+    <title>BFC clear</title>
+    <style>
+        .outer{
+            border: 3px red solid;
+            overflow: hidden;
+         }
+          /*开启BFC  */
+        .inner{
+            width: 100px;
+            height: 100px;
+            background-color: #bfa;
+            float: left;
+        
+        }
+
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color: #bfa;
+            float: left;
+        }
+        .box2{
+            width: 400px;
+            height: 400px;
+            background-color: violet;
+            float: right;
+        }
+        .box3{
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+            clear: both;
+        }
+        .box4{
+            border: 5px black solid;
+        }
+        .box5{
+            width: 100px;
+            height: 100px;
+            background-color: #bfa;
+            float: left;
+        }
+        .box4::after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+
+        .box6{
+            width: 200px;
+            height: 200px;
+            background-color: #bfa;
+        }
+        /* .box6::before{
+            content: "";
+            display: table;
+        } */
+        .box7{
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+            margin-top: 100px;
+        }
+        .clearfix::before,.clearfix::after{
+            content: "";
+            display: table;
+            clear: both;
+        }
+    </style>
+    </head>
+    <body>
+        <div class="outer">
+            <div class="inner"></div>
+        </div>
+        <div class="box1"></div>
+        <div class="box2"></div>
+        <div class="box3"></div>
+        <div class="box4">
+            <div class="box5"></div>
+        </div>
+        <div class="box6 clearfix">
+            <div class="box7"></div>
+        </div>
+    </body>
+    </html>

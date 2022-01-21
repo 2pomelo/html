@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,inital-scale=1.0">
+    <title>相对定位</title>
+    <style>
+body{
+    font-size: 20px;
+}
+.box1{
+    width: 100px;
+    height: 100px;
+    background-color: #bfa;
+}
+.box2{
+    width: 100px;
+    height: 100px;
+    background-color: gold;
+    position: relative;
+    /* position 定位
+    可选值;
+     static默认值
+     relative 相对定位
+     absolute 绝对定位
+     fixed 固定定位
+     sticky 粘滞定位*/
+     top:-100px;
+     left: 100px;
+}
+.box3{
+    width: 100px;
+    height: 100px;
+    background-color: yellow;
+}
+    </style>
+</head>
+
+<body>
+<div class="box1">1</div>
+<div class="box2">2</div>
+<div class="box3">3</div>
+</body>
+
+</html>

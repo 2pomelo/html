@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,inital-scale=1.0">
+<meta http-equiv="X-UX-Compatible" content="ie=edge">
+<title>document</title>
+<style>
+    /* 内容区(content),元素中的所有的子元素和文本内容区中排列
+    width 宽度
+    height 高度
+    
+    边框(border),
+    三个样式: 
+    宽度  border-width
+    四个值: 上 右 下 左
+    三个值: 上 左右 下
+    两个值: 上下 左右
+    border-xxx-width 
+    xxx: top right bottom left
+    颜色  border-color
+    样式  border-style
+    solid    实线
+    dotted   点状虚线
+    dashed   虚线
+    double   双线*/
+   .box1{
+        width: 100px;
+        height: 100px;
+        background-color: #bfa;
+        /* border-width: 10px 20px 30px 40px;
+        border-color: red;
+        border-style: solid; */
+        border: salmon 3px solid;
+        padding: 7px;
+        margin-bottom: 100px;
+        overflow:auto;
+        /* overflow 属性来设置父元素如何处理溢出的子元素
+        可选值: 
+        visible,默认值 子元素会从父元素中溢出,在父元素外部的位置显示
+        hidden 溢出内容将会被裁剪不会显示
+        scroll生产两个滚动条,通过滚动条来查看完整的内容
+        auto 根据需要生成滚动条 */
+    }
+    .box2{
+        width: 100px;
+        height: 500px;
+        background-color: orange;
+    }
+    /* 一个元素在其父元素中,水平布局必须要满足以下等式: 
+    margin-left+border-left+padding-left+width+padding-right+border-right+margin-right=其父元素内容区的宽度 */
+    /* .inner{
+        width: 100px;
+        height: 100px;
+        background-color: yellow;
+    } */
+    .outer{
+        width: 800px;
+        height: 500px;
+        border: 10px red solid;
+    }
+    .inner{
+        width: 200px;   /*auto  默认值*/
+        height: 200px;
+        background-color: #bfa;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 100px;
+    }
+    .box3 , .box4{
+        width: 200px ;
+        height: 200px;
+        font-size: 100px;
+    } 
+    /* 垂直外边距的重叠(折叠)
+         -相邻的垂直方向外边距会发生重叠现象
+    -兄弟元素
+       -兄弟元素间的相邻垂直外边距会取两者之间的较大值(两者都是正直)
+    -特殊情况: 
+        如果相邻的外边距一正一负,则取两者的和
+        如果相邻的外边距都是负值,则取两者中绝对值较大的
+    
+    -兄弟元素之间的外边距的重叠,对于开发是有利的,所以我们不需要进行处理
+    
+    -父子元素
+      -父子元素间相邻外边距,子元素的会传递给父元素(上外边距)
+      -父子外边距的折叠会影响到页面的布局,必须要进行处理
+    */
+    .box3{
+        background-color: palegreen;
+        margin-bottom: 100px;
+    }
+    .box4{
+        background-color: plum;
+    }
+    .box5{
+           width: 100px;
+           height: 50px;
+           background-color: greenyellow;
+           padding-top: 50px;
+    }
+    .box6{
+        width: 50px;
+           height: 50px;
+           background-color: hotpink;
+           /* margin-top:50px; */
+    } 
+   
+</style>
+</head>
+<body>
+    <!-- 
+        盒模型、盒子模型、框模型(box model)
+        -css将页面中的所有元素都设置为一个矩形的盒子
+        -将元素设置为矩形的盒子后,对页面的布局就变成将不同的盒子摆放到不同的位置
+        每一个盒子都由以下几个部分组成:
+        内容区(content)
+        内边距(padding)
+        边框(border)
+        外边距(margin)
+     -->
+    <div>div1</div>
+    <!-- <div class="box1">
+        <div class="inner"></div> -->
+    </div>
+<div class="outer">
+    <div class="inner"></div>
+    <div class="inner"></div>
+</div>
+ <div class="box1">
+     <div class="box2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis quod aliquid molestias quas laboriosam, id nostrum, ut nesciunt similique nulla temporibus tempore culpa. Debitis numquam, rerum cumque at odit sunt!
+     </div>
+ </div> 
+ <div class="box3"></div>
+ <div class="box4"></div>
+ <div class="box5">
+     <div class="box6"></div>
+ </div>
+
+</body>
+</html>

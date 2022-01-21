@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>document</title>
+<style>
+    p{
+        font-size: 30px;
+    }
+    /* 伪元素,表示页面中一些特殊的并不真实的存在的元素
+    伪元素使用 :: 开头
+    
+    ::first-letter 表示第一个字母
+    ::first-line 表示第一行
+    ::selection 表示选中的内容
+    ::before 元素的开始
+    ::after 元素的最后
+    -before和after 必须结合content属性来使用
+    */
+    p::first-letter{
+        font-size: 50px;
+    }
+    p::first-line{
+        background-color: yellowgreen;
+    }
+    p::selection{
+        background-color: tomato;
+    }
+    /* div::before{ 
+        content:"abc";
+        color: blue;   
+    }
+    div::after{
+        content:"嘿嘿";
+        color: brown;
+       
+    }*/
+</style>
+</head>
+<body>
+   <q>hello</q>
+    <div>Hello,how are you</div>
+<p>
+    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat, voluptates exercitationem facilis quisquam aliquid laboriosam esse, laborum sit culpa rem officia delectus dolore, ex molestiae magni quidem nobis atque explicabo!
+</p>
+</body>
+</html>
